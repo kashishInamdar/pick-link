@@ -19,10 +19,12 @@ body {
 }
 .link-ganration-card{
   background-color:#ffff;
+  display: block;
+  height: 50vh;
+  margin-top: 70px;
   padding: 20px;
   border-radius: 10px ;
   box-shadow: 0 0 10px rgb(24, 23, 23);
-
 }
 .user-input{
   width: 400px;
@@ -52,4 +54,26 @@ body {
   margin-bottom: 20px;
   padding: 5px 10px;
   font-size: 20px;
+}
+.saved-links{
+  background-color: #fff;
+  padding: 5px 10px;
+  margin: 20px;
+  border-radius: 5px;
+}
+.all-links-container{
+  display: block;
+  height: 85vh;
+ overflow-y: scroll;
+ 
+}
+
+.all-links-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.all-links-container {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }

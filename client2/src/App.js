@@ -3,11 +3,13 @@ import './App.css';
 import copy from './copy.png';
 import axios from 'axios';
 
+
 function App() {
 
   const [url, setUrl] = useState('');
   const [slug, setSlug] = useState('');
   const [shortUrl, setShortUrl] = useState('');
+  const [links , setLinks] = useState([])
 
   const genratLink = async ()=>{
     const response = await axios.post("/link" , {
@@ -22,6 +24,16 @@ function App() {
     navigator.clipboard.writeText(shortUrl)
     alert("copy to clipboard")
   }
+
+  const loadLinks = async ()=>{
+    const response = await axios.get("/api/links")
+
+    setLinks(response?.data?.data)
+  }
+
+  useEffect(()=>{
+    loadLinks()
+  } , [])
 
   return (
     <>
@@ -68,8 +80,24 @@ function App() {
             </button>
           </div>
 
-          <div>
+          <div className='all-links-container'>
             <h2 className='title2'>All Link</h2>
+
+            {
+              links.map((linkObj , index)=>{
+                const { url , slug , click} = linkObj;
+                return(
+                  <div className='saved-links'>
+                    <p>URL : {url}</p>
+                    <p>Slug : http://localhost:3000/{slug} </p>
+                    <p>Clicks :{click} </p>
+                  
+                  </div>
+                )
+                  
+                
+              })
+            }
           </div>
 
 
