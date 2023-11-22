@@ -1,0 +1,55 @@
+.title {
+  text-align: center;
+  color: aliceblue;
+}
+.title2 {
+  text-align: center;
+}
+
+body {
+  background-color: #4048cd;
+  background-image: linear-gradient(90deg, #4048cd 0%, #C850C0 60%, #FFCC70 100%);
+
+}
+.app-container{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+}
+.link-ganration-card{
+  background-color:#ffff;
+  padding: 20px;
+  border-radius: 10px ;
+  box-shadow: 0 0 10px rgb(24, 23, 23);
+
+}
+.user-input{
+  width: 400px;
+  margin-bottom: 20px;
+  padding: 5px 10px;
+  font-size: 20px;
+  display: block;
+}
+.ling-genrat-btn{
+  
+  margin-bottom: 20px;
+  padding: 5px 15px;
+  font-size: 20px;
+  display: block;
+  border-radius: 5px;
+  background-color: #4048cd;
+  background-image: linear-gradient(90deg, #4048cd 0%, #C850C0 60%, #FFCC70 100%);
+  cursor: pointer;
+}
+.copy{
+  width: 20px;
+  position: relative;
+  right: 30px;
+}
+.input-short-url{
+  width: 400px;
+  margin-bottom: 20px;
+  padding: 5px 10px;
+  font-size: 20px;
+}
