@@ -38,8 +38,6 @@ app.post("/link", async (req, res) => {
     return res.json({
       success: true,
       data: {
-        // url:saveLink.url,
-        // slug:saveLink.slug,
         shortUrl:`${process.env.BASE_URL}/${saveLink.slug}`
       },
       message: "Link saved successfuly"
