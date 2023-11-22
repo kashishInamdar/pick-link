@@ -1,8 +1,8 @@
-import {Schema , model} from "mongoose "
+import { Schema, model } from "mongoose";
 
 const linkSchema = new Schema({
     url : {
-        type : String,
+        type :String,
         required : true,
     },
     slug : {
@@ -10,14 +10,20 @@ const linkSchema = new Schema({
         required : true,
         unique : true,
     },
-    clicks : {
-        type : Number,
-        required : true,
-        default: 0  
+    click : {
+       type :Number,
+       required : true,
+       default: 0,
     },
-    timestamps : true
-}) ;
+    
+},
+{
+    timestamps: true,
+}
 
-const Link = model("Link" , linkSchema);
+);
+
+const Link = model('Link', linkSchema);
+
 
 export default Link;
