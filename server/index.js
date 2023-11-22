@@ -2,7 +2,7 @@ import Express from "express";
 import mongoose from "mongoose";
 import dotenv from 'dotenv';
 dotenv.config();
-import Link from "./models/link.js";
+import Link from "./models/Link.js";
 import path from "path";
 
 
@@ -53,7 +53,54 @@ app.post("/link", async (req, res) => {
   }
 })
 
+app.get("/:slug", async (req, res) => {
+ const {slug} = req.params;
 
+ const link = await Link.findOne({slug: slug});
+
+try{
+  await Link.updateOne({slug: slug}, {$set:{click: link.click + 1}})
+}
+catch(e){
+  console.log(e.message)
+}
+
+ if(!link){
+  return res.json({
+    success: false,
+    message: "Link not found"
+  })
+ }
+ const redirectUrl = link.url;
+ res.redirect(redirectUrl);
+})
+
+app.get("/api/links", async (req, res) => {
+  try{
+    const  linksdata = await Link.find();
+
+   res.json({
+    success:true,
+    data:linksdata,
+    message: "succesfully all links fetched"
+  })
+  
+  }
+  catch(e){
+    res.json({
+      success: false,
+      message: e.message
+    })
+  }
+})
+
+if(process.env.NODE_ENV === "production"){
+ app.use(Express.static(path.join(__dirname, '..', 'client', 'build'))); 
+
+ app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'))
+ });
+}
 
 const PORT = process.env.PORT || 5000;
 
