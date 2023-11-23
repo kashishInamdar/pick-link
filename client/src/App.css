@@ -1,9 +1,11 @@
 .title {
   text-align: center;
   color: aliceblue;
+  text-shadow: rgb(17, 17, 15) 2px 1px 0px;
 }
 .title2 {
   text-align: center;
+  text-shadow: rgb(142, 142, 99) 2px 1px 0px;
 }
 
 body {
@@ -34,7 +36,6 @@ body {
   display: block;
 }
 .ling-genrat-btn{
-  
   margin-bottom: 20px;
   padding: 5px 15px;
   font-size: 20px;
@@ -60,12 +61,12 @@ body {
   padding: 5px 10px;
   margin: 20px;
   border-radius: 5px;
+  box-shadow: 0 0 10px rgb(24, 23, 23);
 }
 .all-links-container{
   display: block;
-  height: 85vh;
+  height: 75vh;
  overflow-y: scroll;
- 
 }
 
 .all-links-container::-webkit-scrollbar {

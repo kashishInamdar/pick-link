@@ -80,9 +80,9 @@ function App() {
             </button>
           </div>
 
-          <div className='all-links-container'>
+          <div >
             <h2 className='title2'>All Link</h2>
-
+              <div className='all-links-container'>
             {
               links.map((linkObj , index)=>{
                 const { url , slug , click} = linkObj;
@@ -98,6 +98,7 @@ function App() {
                 
               })
             }
+            </div>
           </div>
 
 
