@@ -2,7 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from 'dotenv';
 dotenv.config();
-import Link from "./models/Link.js";
+import Link from "./models/link.js"
 import path from "path";
 
 
