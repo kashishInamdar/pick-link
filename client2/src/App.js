@@ -89,7 +89,7 @@ function App() {
                 return(
                   <div className='saved-links'>
                     <p>URL : {url}</p>
-                    <p>Slug : http://localhost:3000/{slug} </p>
+                    <p>Slug : https://pick-link.onrender.com/{slug} </p>
                     <p>Clicks :{click} </p>
                   
                   </div>

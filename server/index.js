@@ -1,14 +1,13 @@
-import Express from "express";
+import express from "express";
 import mongoose from "mongoose";
 import dotenv from 'dotenv';
 dotenv.config();
 import Link from "./models/Link.js";
-
 import path from "path";
 
 
-const app = Express();
-app.use(Express.json());
+const app = express();
+app.use(express.json());
 const __dirname = path.resolve();
 
 const connnectDB = async () => {
@@ -93,12 +92,12 @@ app.get("/api/links", async (req, res) => {
   }
 })
 
-if(process.env.NODE_ENV === "production"){
- app.use(Express.static(path.join(__dirname, '..', 'client', 'build'))); 
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '..', 'client2', 'build')));
 
- app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'))
- });
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'client2', 'build', 'index.html'))
+  });
 }
 
 const PORT = process.env.PORT || 5000;
